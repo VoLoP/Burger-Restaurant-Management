@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BurgerRestaurantManagement.DAL.Repositories.GenericRepo
 {
-    public class GenericRepo<T> : IGenericRepo <T> where T : class
+    public class GenericRepo<T> : IGenericRepo<T> where T : class
     {
 
         private readonly DbContext _ctx;
@@ -27,7 +27,7 @@ namespace BurgerRestaurantManagement.DAL.Repositories.GenericRepo
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<T>> GetAll()
+        public Task<IQueryable<T>> Filter(Func<T, bool> predicate)
         {
             throw new NotImplementedException();
         }
@@ -38,6 +38,11 @@ namespace BurgerRestaurantManagement.DAL.Repositories.GenericRepo
         }
 
         public Task<T> Update(T entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IQueryable<T>> GetAll()
         {
             throw new NotImplementedException();
         }
