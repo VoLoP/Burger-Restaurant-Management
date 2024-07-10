@@ -9,9 +9,9 @@ namespace BurgerRestaurantManagement.DAL.Data
     public class Product
     {
         public int ProductId { get; set; }
-        public string Name { get; set; }
+        public required string Name { get; set; }
+        public string? Description { get; set; }
         public decimal Price { get; set; }
-        public string Description { get; set; }
         public int ProductTypeId { get; set; }
         public List<IngredientDetail>? IngredientDetails { get; set; }
         public List<Tag>? Tags { get; set; }

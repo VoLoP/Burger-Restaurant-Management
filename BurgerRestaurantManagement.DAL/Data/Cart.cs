@@ -9,6 +9,6 @@ namespace BurgerRestaurantManagement.DAL.Data
     public class Cart
     {
         public int CartId { get; set; }
-        public List<OrderDetail> OrderDetails { get; set; }
+        public List<OrderDetail>? OrderDetails { get; set; }
     }
 }

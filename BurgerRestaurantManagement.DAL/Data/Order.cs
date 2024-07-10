@@ -10,9 +10,9 @@ namespace BurgerRestaurantManagement.DAL.Data
     {
         public int Id { get; set; }
         public DateTime OrderDate { get; set; }
-        public string OrderNumber { get; set; }
+        public required string OrderCode { get; set; }
         public decimal TotalAmount { get; set; }
-        public string UserId { get; set; }
+        public string? UserId { get; set; }
         public User? User { get; set; }
         public List<OrderDetail>? OrderDetails { get; set; }
     }

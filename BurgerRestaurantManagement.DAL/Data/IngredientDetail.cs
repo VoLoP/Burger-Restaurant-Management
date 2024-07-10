@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace BurgerRestaurantManagement.DAL.Data
 {
+    [PrimaryKey(nameof(IngredientId), nameof(ProductId))]
     public class IngredientDetail
     {
-        public int IngredientDetailId { get; set; }
         public int IngredientId { get; set; }
         public int ProductId { get; set; }
         public int Amount { get; set; }
