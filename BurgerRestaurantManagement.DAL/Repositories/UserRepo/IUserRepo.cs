@@ -1,4 +1,5 @@
 ﻿using BurgerRestaurantManagement.DAL.Data;
+using BurgerRestaurantManagement.DAL.Repositories.GenericRepo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +8,8 @@ using System.Threading.Tasks;
 
 namespace BurgerRestaurantManagement.DAL.Repositories.UserRepo
 {
-    public interface IUserRepo
+    public interface IUserRepo : IGenericRepo<User>
     {
-        Task<IEnumerable<User>> GetAllUsers();
-        Task<User> GetUserById(int id);
-        Task<User> AddUser(User user);
-        Task<User> UpdateUser(User user);
-        Task<User> DeleteUser(int id);
+
     }
 }

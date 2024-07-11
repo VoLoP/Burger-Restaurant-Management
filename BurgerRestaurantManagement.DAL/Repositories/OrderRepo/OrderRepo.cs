@@ -1,4 +1,5 @@
 ﻿using BurgerRestaurantManagement.DAL.Data;
+using BurgerRestaurantManagement.DAL.Repositories.GenericRepo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,31 +8,8 @@ using System.Threading.Tasks;
 
 namespace BurgerRestaurantManagement.DAL.Repositories.OrderRepo
 {
-    public class OrderRepo : IOrderRepo
+    public class OrderRepo(BurgerDbContext ctx) : GenericRepo<Order>(ctx), IOrderRepo
     {
-        public Task<Order> AddOrder(Order order)
-        {
-            throw new NotImplementedException();
-        }
 
-        public Task<Order> DeleteOrder(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<Order>> GetAllOrders()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Order> GetOrderById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Order> UpdateOrder(Order order)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

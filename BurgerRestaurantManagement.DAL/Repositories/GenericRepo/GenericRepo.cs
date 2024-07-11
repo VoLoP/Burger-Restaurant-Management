@@ -17,34 +17,45 @@ namespace BurgerRestaurantManagement.DAL.Repositories.GenericRepo
             _ctx = ctx;
         }
 
-        public Task<T> Add(T entity)
+        public async Task<T> Add(T entity)
         {
-            throw new NotImplementedException();
+            await _ctx.Set<T>().AddAsync(entity);
+            await _ctx.SaveChangesAsync();
+            return entity;
         }
 
-        public Task<T> Delete(int id)
+        public async Task<T> Delete(int id)
         {
-            throw new NotImplementedException();
+            var entity = await _ctx.Set<T>().FindAsync(id);
+            if (entity != null)
+            {
+                _ctx.Set<T>().Remove(entity);
+                await _ctx.SaveChangesAsync();
+            }
+            return entity;
         }
 
-        public Task<IQueryable<T>> Filter(Func<T, bool> predicate)
+        //AsQueryable() maybe not needed here
+        public async Task<IQueryable<T>> Filter(Func<T, bool> predicate)
         {
-            throw new NotImplementedException();
+            return _ctx.Set<T>().Where(predicate).AsQueryable();
         }
 
-        public Task<T> GetById(int id)
+        public async Task<T> GetById(int id)
         {
-            throw new NotImplementedException();
+            return await _ctx.Set<T>().FindAsync(id);
         }
 
-        public Task<T> Update(T entity)
+        public async Task<T> Update(T entity)
         {
-            throw new NotImplementedException();
+            _ctx.Set<T>().Update(entity);
+            await _ctx.SaveChangesAsync();
+            return entity;
         }
 
-        public Task<IQueryable<T>> GetAll()
+        public async Task<IQueryable<T>> GetAll()
         {
-            throw new NotImplementedException();
+            return _ctx.Set<T>();
         }
     }
 }

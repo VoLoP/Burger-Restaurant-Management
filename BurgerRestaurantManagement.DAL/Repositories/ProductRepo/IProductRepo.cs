@@ -1,4 +1,5 @@
 ﻿using BurgerRestaurantManagement.DAL.Data;
+using BurgerRestaurantManagement.DAL.Repositories.GenericRepo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +8,8 @@ using System.Threading.Tasks;
 
 namespace BurgerRestaurantManagement.DAL.Repositories.ProductRepo
 {
-    public interface IProductRepo
+    public interface IProductRepo : IGenericRepo<Product>
     {
-        Task<IEnumerable<Product>> GetAllProducts();
-        Task<Product> GetProductById(int id);
-        Task<Product> AddProduct(Product product);
-        Task<Product> UpdateProduct(Product product);
-        Task<Product> DeleteProduct(int id);
+
     }
 }
