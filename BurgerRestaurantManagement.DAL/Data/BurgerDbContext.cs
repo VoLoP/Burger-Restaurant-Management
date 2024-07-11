@@ -17,5 +17,6 @@ namespace BurgerRestaurantManagement.DAL.Data
         public DbSet<ProductType> ProductTypes { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Tag> Tags { get; set; }
+        public DbSet<StaffMember> StaffMembers { get; set; }
     }
 }
