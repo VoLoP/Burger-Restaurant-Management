@@ -1,1 +1,35 @@
-<p>burger-menu works!</p>
+<div class="buy">
+    <svg xmlns="http://www.w3.org/2000/svg" class="dia" width="44" height="44" viewBox="0 0 44 44" fill="none">
+      <path d="M2 22H42" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M22 42L16 22L22 2" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M42 22L22 2L2 22L22 42L42 22Z" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M22 42L28 22L22 2" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="text-group">
+      <h2 class="pBuy">What you can buy</h2>
+      <p class="see-all"><u><a>See all</a></u></p>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" class="dia" width="44" height="44" viewBox="0 0 44 44" fill="none">
+      <path d="M2 22H42" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M22 42L16 22L22 2" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M42 22L22 2L2 22L22 42L42 22Z" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M22 42L28 22L22 2" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  <div class="menu">
+    <mat-paginator [length]="burgerMenus.length" [pageSizeOptions]="[2, 4]" aria-label="Select page" (page)="changePage($event)">
+    </mat-paginator>  
+    <table>
+      <tr>
+        <th>#</th>
+        <th>Menu</th>
+        <th>Price</th>
+      </tr>
+      <tr *ngFor="let menu of burgerMenus | slice:(page-1)*pageSize:(page-1)*pageSize+pageSize">
+        <td>{{menu.id}}</td>
+        <td>{{menu.name}}</td>
+        <td>{{menu.price}}</td>
+      </tr>
+    </table>      
+  </div>
