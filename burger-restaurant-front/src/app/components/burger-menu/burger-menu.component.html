@@ -19,17 +19,19 @@
 
   <div class="menu">
     <mat-paginator [length]="burgerMenus.length" [pageSizeOptions]="[2, 4]" aria-label="Select page" (page)="changePage($event)">
-    </mat-paginator>  
-    <table>
-      <tr>
-        <th>#</th>
-        <th>Menu</th>
-        <th>Price</th>
-      </tr>
-      <tr *ngFor="let menu of burgerMenus | slice:(page-1)*pageSize:(page-1)*pageSize+pageSize">
-        <td>{{menu.id}}</td>
-        <td>{{menu.name}}</td>
-        <td>{{menu.price}}</td>
-      </tr>
-    </table>      
+    </mat-paginator>
+    <div class="card-container">
+      <div class="card" *ngFor="let menu of burgerMenus | slice:(page-1)*pageSize:(page-1)*pageSize+pageSize">
+        <div class="card-content">
+          <div class="card-image"></div>
+          <h3 class="card-menu">{{menu.name}}</h3>
+          <p class="card-description">{{menu.description}}</p>
+          <p class="card-mini">nulla</p>
+          <div class="cart-container">
+            <p class="cart">Add to Cart</p>
+          </div>
+          <p class="price">{{menu.price}}</p>
+        </div>
+      </div>
+    </div>
   </div>

@@ -38,14 +38,14 @@ export class BurgerMenuComponent {
   page: number = 1;
   pageSize: number = 2;
   burgerMenus = [
-    { id: 1, name: 'Burger', price: '$3' },
-    { id: 2, name: 'Nice Burger', price: '$2' },
-    { id: 3, name: 'Net Burger', price: '$20' },
-    { id: 4, name: 'Burgerrr', price: '$7' },
-    { id: 5, name: 'BurgerBurger', price: '$34' },
-    { id: 6, name: 'Wow Burger', price: '$2' },
-    { id: 7, name: 'Small Burger', price: '$1' },
-    { id: 8, name: 'Big Burger', price: '$8' },
+    { id: 1, name: 'Burger', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', price: '$3' },
+    { id: 2, name: 'Nice Burger', description: 'Hi', price: '$2' },
+    { id: 3, name: 'Net Burger', description: 'Hi', price: '$20' },
+    { id: 4, name: 'Burgerrr', description: 'Hi', price: '$7' },
+    { id: 5, name: 'BurgerBurger', description: 'Hi', price: '$34' },
+    { id: 6, name: 'Wow Burger', description: 'Hi', price: '$2' },
+    { id: 7, name: 'Small Burger', description: 'Hi', price: '$1' },
+    { id: 8, name: 'Big Burger', description: 'Hi', price: '$8' },
   ];
 
   changePage(event: PageEvent) {
