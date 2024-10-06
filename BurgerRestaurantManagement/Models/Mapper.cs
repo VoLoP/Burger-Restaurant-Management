@@ -2,6 +2,7 @@
 using BurgerRestaurantManagement.Models.IngredientDetailModels;
 using BurgerRestaurantManagement.Models.IngredientModels;
 using BurgerRestaurantManagement.Models.OrderDetailModels;
+using BurgerRestaurantManagement.Models.OrderModels;
 using BurgerRestaurantManagement.Models.ProductModels;
 using BurgerRestaurantManagement.Models.TagModels;
 
@@ -123,5 +124,31 @@ namespace BurgerRestaurantManagement.Models
         }
         #endregion
     
+        #region Order
+        public Order MapModelToEntity(OrderInputModel orderInputModel)
+        {
+            return new Order
+            {
+                OrderId = orderInputModel.OrderId,
+                OrderDate = orderInputModel.OrderDate,
+                OrderCode = orderInputModel.OrderCode,
+                TotalAmount = orderInputModel.TotalAmount,
+                UserId = orderInputModel.UserId
+            };
+        }
+
+        public OrderOutputModel MapEntityToModel(Order order)
+        {
+            return new OrderOutputModel
+            {
+                OrderId = order.OrderId,
+                OrderDate = order.OrderDate,
+                OrderCode = order.OrderCode,
+                TotalAmount = order.TotalAmount,
+                UserId = order.UserId,
+                OrderDetails = order.OrderDetails?.Select(MapEntityToMiniModel).ToList()
+            };
+        }
+        #endregion
     }
 }
