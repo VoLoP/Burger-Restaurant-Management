@@ -111,5 +111,17 @@ namespace BurgerRestaurantManagement.Models
         }
 
         #endregion
+    
+        #region ProductType
+        public ProductType MapModelToEntity(ProductTypeInputModel productTypeInputModel)
+        {
+            return new ProductType
+            {
+                ProductTypeId = productTypeInputModel.ProductTypeId,
+                Name = productTypeInputModel.Name
+            };
+        }
+        #endregion
+    
     }
 }
